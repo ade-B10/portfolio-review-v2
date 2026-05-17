@@ -60,6 +60,12 @@ sed -i.bak 's|<title>Protected Page</title>|<title>Base10 Portfolio Review v2</t
 rm -f "${OUTPUT_FILE}.bak"
 rm -rf ./_tmp_encrypted
 
+# Apply Base10 branding to the password landing page
+if [ -f "./restyle_landing.py" ]; then
+  echo "Applying Base10 branding to landing page..."
+  python3 ./restyle_landing.py
+fi
+
 echo ""
 echo "Done. $OUTPUT_FILE updated."
 echo ""
